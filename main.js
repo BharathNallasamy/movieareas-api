@@ -1,4 +1,5 @@
-import express from "express"; // If this import has to work here, "type":"module" has to be added in the package.json.
+import express from "express"; // Ensure "type": "module" is added in package.json.
+import movieRoutes from "./routes/movies.route.js";
 
 const app = express();
 const PORT = 6969;
@@ -8,18 +9,16 @@ app.get("/", (req, res) => {
 });
 
 // CRUD functionalities of movies
-// R - For Reading
-app.get("/", ()=>{})
-// C - For Creating movies 
-app.post("/", ()=>{})
-// U - For Updating movies
-app.put("/:id", ()=>{})
-// D - For Deleting movies
-app.delete("/:id", ()=>{})
+// CLIENT -> MIDDLEWARE -> SERVER
+app.use("/movies", movieRoutes);
 
-app.listen(PORT, () => {
-  console.log(`The server is running at http://localhost:${PORT}`);
-});
+app
+  .listen(PORT, () => {
+    console.log(`The server is running at http://localhost:${PORT}`);
+  })
+  .on("error", (err) => {
+    console.error("Error starting server:", err);
+  });
 
 // DRY => Don't repeat yourself
 // KISS => Keep It Simple, Stupid
