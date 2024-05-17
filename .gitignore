@@ -1,1 +1,3 @@
 node_modules
+# Hide Sensitive Info's
+.env

@@ -8,3 +8,13 @@
 5. `git commit -m <your message>` => To commit the stages
 6. `git pull` => To pull the Code
 7. `git push` => To push the Changes
+
+### DataBase Options
+1. SQL => ( MYSQL, MariaDB, PostgreSQL )
+2. NoSQL => ( MongoDB )
+
+bharathnaveen523
+5ibESmaRismGfHVc
+
+ip => 152.58.220.86
+
